@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
-# Create your views here.
+
+
+def agregarCliente(request):
+    if request.method == 'POST':
+        print('')
+    else:
+        

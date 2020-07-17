@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'apps.parametros',
     'apps.proveedores',
     'apps.servicios',
-    'apps.usuarios'
+    'apps.usuarios',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
