@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mo#e-dyb=n^&2gmdht+x87$ljhox-sbgm7^93utd0o)%=&7l56'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,11 +86,11 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'contratos',
-        'USER':'postgres',
-        'HOST':'localhost',
-        'PORT':5432,
-        'PASSWORD':'41.788.499',
+        'NAME':config('NAME'), 
+        'USER':config('USER'),
+        'HOST':config('HOST'),
+        'PORT':config('PORT'),
+        'PASSWORD':config('PASSWORD')
     }
 }
 
