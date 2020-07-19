@@ -1,10 +1,18 @@
 from django.db import models
 from simple_history.models import HistoricalRecords
 
+class Pais(models.Model):
+    id=models.AutoField(primary_key=True)
+    pais=models.CharField('Pais', max_length=50,blank=False,null=False)
+    borrado = models.BooleanField('borrado',default=False)
+    history = HistoricalRecords()
+    def __str__(self):
+        return self.pais
 
 class Provincia(models.Model):
     id=models.AutoField(primary_key=True)
     provincia=models.CharField('Provincia', max_length=50,blank=False,null=False)
+    pais=models.ForeignKey(Pais,on_delete=models.PROTECT)
     borrado = models.BooleanField('borrado',default=False)
     history = HistoricalRecords()
     def __str__(self):

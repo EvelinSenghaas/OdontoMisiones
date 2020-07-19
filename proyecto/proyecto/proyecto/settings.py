@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -46,7 +48,8 @@ INSTALLED_APPS = [
     'apps.proveedores',
     'apps.servicios',
     'apps.usuarios',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -58,8 +61,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
-
 ROOT_URLCONF = 'proyecto.urls'
 
 TEMPLATES = [
