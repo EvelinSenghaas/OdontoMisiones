@@ -1,4 +1,4 @@
-Django==2.0
+Django==2.2.13
 django-cors-headers==3.4.0
 django-simple-history==2.11.0
 djangorestframework==3.11.0
