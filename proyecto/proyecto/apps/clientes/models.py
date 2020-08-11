@@ -7,7 +7,7 @@ class Cliente(models.Model):
     nombre=models.CharField('Nombre (*)',max_length=200,blank = False, null = False)
     apellido = models.CharField('Descripcion (*)',max_length=200,blank = False, null = True)
     domicilio=models.ForeignKey(Domicilio, on_delete=models.PROTECT)
-    telefono = models.IntegerField('Telefono', default=False, blank=False, null=False)
+    telefono = models.CharField('Telefono', max_length=200, blank=False, null=False)
     email=models.EmailField('e-mail', max_length=100,null=True,blank=True)
     nota = models.CharField('Nota ',max_length=200,blank = True, null = True)
     borrado = models.BooleanField('borrado',default=False)
